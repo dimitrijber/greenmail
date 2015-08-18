@@ -165,7 +165,7 @@ public class ImapRequestLineReader {
     public void consumeLine()
             throws ProtocolException {
         char next = nextChar();
-        while (next != '\n') {
+        while (next != '\n' && next != '\r') {
             consume();
             next = nextChar();
         }
